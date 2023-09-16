@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+    int p, q, m, e, n, dn, d, c, de;
+    printf("Enter p, q, m, e: ");
+    scanf("%d %d %d %d", &p, &q, &m, &e);
+    n = p * q;
+    dn = (p - 1) * (q - 1);
+
+    for (int i = 1; i < dn; i++) {
+        if (((e % dn) * (i % dn)) % dn == 1) {
+            d = i;
+            break;
+        }
+    }
+   c = fmod(pow(m, e), n);
+    de = fmod(pow(c, d), n);
+    printf("Encrypted text: %d\n", c);
+    printf("Decrypted text: %d\n", de);
+}
