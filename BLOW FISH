@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+typedef uint32_t word;
+word P[18];
+word S[4][256];
+void Blowfish_Init(const char* key, size_t keylen) {
+}
+void Blowfish_Encrypt(word* left, word* right) {
+}
+void Blowfish_Decrypt(word* left, word* right) {
+}
+int main() {
+    const char* key = "ThisIsASecretKey";
+    size_t keylen = strlen(key);
+    word left = 0x12345678;
+    word right = 0x87654321;
+    Blowfish_Init(key, keylen);
+    Blowfish_Encrypt(&left, &right);
+    printf("Encrypted: %08X %08X\n", left, right);
+    Blowfish_Decrypt(&left, &right);
+    printf("Decrypted: %08X %08X\n", left, right);
+}
+
+
